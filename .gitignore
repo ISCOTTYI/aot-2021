@@ -1,5 +1,7 @@
 main
 .ccls-cache/
+preset_main.cpp
+
 # Prerequisites
 *.d
 
