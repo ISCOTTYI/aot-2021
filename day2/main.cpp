@@ -6,11 +6,39 @@
 class Solution {
 public:
     int part1(std::vector<std::string> v) {
-        return 0;
+        int depth = 0;
+        int pos = 0;
+        for (auto& i : v) {
+            char ident = i[0];
+            int m = i.back() - '0';
+            if (ident == 'f') {
+                pos = pos + m;
+            } else if (ident == 'u') {
+                depth = depth - m;
+            } else {
+                depth = depth + m;
+            }
+        }
+        return depth * pos;
     }
 
     int part2(std::vector<std::string> v) {
-        return 0;
+        int depth = 0;
+        int pos = 0;
+        int aim = 0;
+        for (auto& i : v) {
+            char ident = i[0];
+            int m = i.back() - '0';
+            if (ident == 'f') {
+                pos = pos + m;
+                depth = depth + aim * m;
+            } else if (ident == 'u') {
+                aim = aim - m;
+            } else {
+                aim = aim + m;
+            }
+        }
+        return depth * pos;
     }
 };
 

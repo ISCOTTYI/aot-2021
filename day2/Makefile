@@ -1,8 +1,8 @@
-CC=g++
+CC=g++-11
 
 main: main.cpp main.o
-	$(CC) -std=c++11 main.cpp -o main
+	$(CC) -Wall -g -std=c++0x main.cpp -o main
 
 clean:
-	rm main.o
+	rm main.o main
 
